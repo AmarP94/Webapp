@@ -1,0 +1,73 @@
+﻿@model IEnumerable<WebSite.db.EntityModels.KalendarskaObavijest>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/lib/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <script src="~/lib/jqueryui/jquery-ui.min.js"></script>
+    <script src="~/js/jquery/jquery.js"></script>
+    <title>Index</title>
+</head>
+<body>
+<p>
+    <a href="~/Administracija/Home/Add">Dodaj objavu</a>
+    @*@Html.ActionLink("Dodaj objavu", "Add")*@
+    
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NazivKO)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DatumDodavanjaKO)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DatumIzmjeneKO)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VrijemeNajaveKO)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TextKO)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NazivKO)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DatumDodavanjaKO)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DatumIzmjeneKO)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VrijemeNajaveKO)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TextKO)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                @*<a asp-action="Delete" asp-route-id="@item.Id">Delete</a>*@
+                <a href="~/Administracija/Home/Remove?id=@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</body>
+</html>

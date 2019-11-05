@@ -1,0 +1,25 @@
+﻿@model OdgovoriAnketeIndexViewModel
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Odgovori</h2>
+
+<table class="table" border="1">
+    <tr>
+        <th>Odgovor</th>
+        <th>Akcija</th>
+    </tr>
+    @foreach (var x in Model.Rows)
+    {
+        <tr>
+            <td>@x.Odgovor</td>
+            <td>
+                <a href="/Administracija/OdgovoriAnkete/Uredi/@x.Id" class="btn btn-success">Uredi </a>
+                <a href="/Administracija/OdgovoriAnkete/Obrisi/@x.Id" class="btn btn-danger">Obrisi </a>
+            </td>
+        </tr>
+    }
+</table>
+
+<a href="/Administracija/OdgovoriAnkete/Dodaj/@Model.AnketaId" class="btn btn-success">Dodaj</a>

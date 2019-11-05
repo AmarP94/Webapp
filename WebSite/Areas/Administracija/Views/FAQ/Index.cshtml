@@ -1,0 +1,48 @@
+﻿@model FAQIndexViewModel
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Cesta pitanja</h2>
+<hr />
+<form class="form-inline">
+    <div>
+
+        <input class="form-control" type="text" name="Pretraga" placeholder="Unesite pitanje" />
+
+        <button class="btn btn-primary">Pretrazi</button>
+    </div>
+</form>
+<br />
+<table class="table" border="1">
+    <tr>
+        <th>Pitanje</th>
+        <th>Status odgovora</th>
+        <th>Akcija</th>
+    </tr>
+    @foreach (var x in Model.Rows)
+    {
+        <tr>
+            <td>@x.Pitanje</td>
+            @if (x.AktivanOdgovor == true)
+            {
+                <td>
+                    <a href="/Administracija/FAQ/Promijeni/@x.Id">Aktivan</a>
+                </td>
+            }
+            else
+            {
+                <td>
+                    <a href="/Administracija/FAQ/Promijeni/@x.Id">Neaktivan</a>
+                </td>
+            }
+            <td>
+                <a href="/Administracija/FAQ/Detalji/@x.Id" class="btn btn-primary">Detalji   </a>
+                <a href="/Administracija/FAQ/Uredi/@x.Id" class="btn btn-success"> Uredi   </a>
+                <a href="/Administracija/FAQ/Obrisi/@x.Id" class="btn btn-danger"> Obrisi </a>
+            </td>
+        </tr>
+    }
+</table>
+<a href="/Administracija/FAQ/Dodaj/" class="btn btn-success">Dodaj</a>
+

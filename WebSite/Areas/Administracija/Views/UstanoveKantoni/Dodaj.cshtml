@@ -1,0 +1,43 @@
+﻿@model UstanoveKantoniDodajViewModel
+@{
+    ViewData["Title"] = "Dodaj";
+}
+
+<h2>Dodaj ustanovu</h2>
+
+<form action="/Administracija/UstanoveKantoni/Snimi/" method="post">
+    <table>
+        <tr>
+            <td>Naziv ustanove: </td>
+            <td>@Html.TextBoxFor(x => x.NazivUstanove, new { @class = "form-control" })</td>
+            <td>@Html.ValidationMessageFor(x => x.NazivUstanove)</td>
+        </tr>
+        <tr>
+            <td>Adresa ustanove : </td>
+            <td>@Html.TextBoxFor(x => x.Adresa, new { @class = "form-control" })</td>
+            <td>@Html.ValidationMessageFor(x => x.Adresa)</td>
+        </tr>
+        <tr>
+            <td>Kontakt telefon : </td>
+            <td>@Html.TextBoxFor(x => x.KontaktTelefon, new { @class = "form-control" })</td>
+            <td>@Html.ValidationMessageFor(x => x.KontaktTelefon)</td>
+        </tr>
+        <tr>
+            <td>Email ustanove : </td>
+            <td>@Html.TextBoxFor(x => x.Email, new { @class = "form-control" })</td>
+            <td>@Html.ValidationMessageFor(x => x.Email)</td>
+        </tr>
+        <tr>
+            <td>Web stranica : </td>
+            <td>@Html.TextBoxFor(x => x.Link, new { @class = "form-control" })</td>
+            <td>@Html.ValidationMessageFor(x => x.Link)</td>
+        </tr>
+        <tr>
+            <td>Kanton : </td>
+            <td>@Html.DropDownListFor(x => x.KantonId, Model.Kantoni, "Odaberite kanton", new { @class = "form-control" })</td>
+            <td>@Html.ValidationMessageFor(x => x.KantonId)</td>
+        </tr>
+    </table>
+    <button class="btn btn-primary">Snimi</button>
+    <a href="/Administracija/UstanoveKantoni/Index/" class="btn btn-primary">Nazad</a>
+</form>

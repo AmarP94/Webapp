@@ -1,0 +1,68 @@
+﻿
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+#sortable {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: auto;
+}
+#sortable li {
+    margin: 5px 5px 10px 0;
+    padding: 1px;
+    float: left;
+    width: 200px;
+    height: 190px;
+    font-size: 4em;
+    text-align: center;
+}
+
+.sortable {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: auto;
+}
+.sortable li {
+    margin: 5px 5px 10px 0;
+    padding: 1px;
+    float: left;
+    width: 200px;
+    height: 190px;
+    font-size: 4em;
+    text-align: center;
+}
+.img-wrap {
+    position: relative;    
+}
+.img-wrap .close1 {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    z-index: 100;   
+}
+.img-wrap .close1:hover {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 100;
+    cursor:pointer;   
+}
+
+.menu-item-color {
+    color: #9d9d9d!important;
+}
+.dropdown-menu{
+    width:200px;
+    margin-top:15px;
+}
+
+.field-validation-error{
+    color:red;
+}

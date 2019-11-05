@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <partial name="~/Views/Shared/_Meta.cshtml" />
+    <link href="~/lib/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/css/sb-admin.css" rel="stylesheet" />
+    <link href="~/lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="~/css/dataTables.bootstrap.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap-fileinput/css/fileinput.css" rel="stylesheet" />
+    <link href="~/css/PagedList.css" rel="stylesheet" />
+    <link href="~/lib/jqueryui/jquery-ui.css" rel="stylesheet" />
+    <link href="~/lib/jquery-datetimepicker/jquery.datetimepicker.css" rel="stylesheet" />
+    <link href="~/paginationjs/pagination.css" rel="stylesheet" />
+    <link href="~/css/website.css" rel="stylesheet" />
+
+    <script src="~/js/jquery/jquery.js"></script>
+
+    <script src="~/lib/bootstrap/js/bootstrap.js"></script>
+    <script src="~/lib/bootstrap-fileinput/js/locales/cr.js"></script>
+    <script src="~/lib/bootstrap-fileinput/js/fileinput.js"></script>
+    <script src="~/lib/tinymce/tinymce.min.js"></script>
+    <script src="~/js/gen_validatorv4.js"></script>
+    <script src="~/lib/jqueryui/jquery-ui.js"></script>
+    <script src="~/lib/jquery-datetimepicker/jquery.datetimepicker.js"></script>
+    <script src="~/js/moment.js/moment.js"></script>
+    <script src="~/paginationjs/pagination.js"></script>
+    <script src="~/js/site.js"></script>
+    <script src="~/js/jsFIT.js"></script>
+    <script src="~/js/jquery.validate.min.js">
+    </script>
+    <script src="~/js/jquery.validate.unobtrusive.min.js">
+    </script>
+</head>
+<body>
+
+
+    <div id="wrapper">
+        <nav class="navbar fixed-top" role="navigation" style="background-color:#4B9FEA;">
+            <partial name="~/Areas/Administracija/Views/Shared/_Header.cshtml" />
+            <partial name="~/Areas/Administracija/Views/Shared/_Menu.cshtml" />
+        </nav>
+        <div id="page-wrapper" style="min-height:950px; overflow:auto;">
+            @RenderBody()
+        </div>
+    </div>
+
+    <div id="footer">
+
+    </div>
+
+</body>
+</html>
+

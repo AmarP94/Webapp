@@ -1,0 +1,32 @@
+﻿@model FAQDetaljiViewModel
+@{
+    ViewData["Title"] = "Detalji";
+}
+
+<h2>Detalji</h2>
+
+<table>
+    <tr>
+        <td>Pitanje : </td>
+        <td>@Model.Pitanje</td>
+    </tr>
+    <tr>
+        <td>Odgovor : </td>
+        <td>@Model.Odgovor</td>
+    </tr>
+    <tr>
+        <td>Status odgovora : </td>
+        @if (Model.AktivanOdgovor == true)
+        {
+            <td>Aktivan</td>
+        }
+        else
+        {
+            <td>Neaktivan</td>
+        }
+    </tr>
+    <tr>
+        <td>Datum izmjene : </td>
+        <td>@Model.DatumIzmjene.ToShortDateString()</td>
+    </tr>
+</table>

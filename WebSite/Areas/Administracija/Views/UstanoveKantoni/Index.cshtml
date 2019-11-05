@@ -1,0 +1,46 @@
+﻿@model UstanoveKantoniIndexViewModel
+@{
+    ViewData["Title"] = "Ustanove";
+}
+
+<h2>Ustanove</h2>
+<hr/>
+<form action=".">
+   
+    @Html.DropDownListFor(x => x.Id, Model.Kantoni, "Odaberite kanton", new { @class = "form-control", @onchange = "$('#Pretraga').val('');  this.form.submit();", @style="display:inline-block" })
+    <a href="/Administracija/UstanoveKantoni/Dodaj/@Model.Id" class="btn btn-success" style="    vertical-align:top">Dodaj ustanovu</a>
+    <div class="float-right">
+        @Html.TextBoxFor(x=>x.Pretraga, new { @class = "form-control", @style = "display:inline-block;width:auto", placeholder="Unesite naziv ustanove..." })
+        <button class="btn btn-primary" style="    vertical-align:top">Pretrazi</button>
+    </div>
+
+</form>
+@if (Model.Rows.Count > 0)
+{
+
+    <hr/>
+<table class="table" border="1">
+    <tr>
+        <th>Naziv ustanove</th>
+        <th>Adresa</th>
+        <th>Kontakt</th>
+        <th>Email</th>
+        <th>Web stranica</th>
+        <th>Akcija</th>
+    </tr>
+    @foreach (var x in Model.Rows)
+    {
+        <tr>
+            <td>@x.NazivUstanove</td>
+            <td>@x.Adresa</td>
+            <td>@x.KontaktTelefon</td>
+            <td>@x.Email</td>
+            <td>@x.Link</td>
+            <td>
+                <a href="/Administracija/UstanoveKantoni/Uredi/@x.Id" class="btn btn-success">Uredi</a>
+                <a href="/Administracija/UstanoveKantoni/Obrisi/@x.Id" class="btn btn-danger">Obrisi</a>
+            </td>
+        </tr>
+    }
+</table>
+}

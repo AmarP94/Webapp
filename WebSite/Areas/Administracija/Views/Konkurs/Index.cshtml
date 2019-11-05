@@ -1,0 +1,40 @@
+﻿@model KonkursIndexViewModel
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Administracija/Views/Shared/MasterAdmin.cshtml";
+}
+
+<h2>Konkursi</h2>
+<hr/>
+<form class="form-inline">
+<div>
+    
+    <input class ="form-control" type="text" name="Pretraga" placeholder="Unesite naziv" />
+    
+    <button class="btn btn-primary">Pretrazi</button>
+</div>
+</form>
+<br/>
+<table class="table" border="1">
+    <tr>
+        <th>Naziv konkursa</th>
+        <th>Tip konkursa</th>
+        <th>Datum dodavanja</th>
+        <th>Akcija</th>
+    </tr>
+    @foreach (var x in Model.Rows)
+    {
+        <tr>
+            <td>@x.NazivKonkursa</td>
+            <td>@x.TipKonkursa</td>
+            <td>@x.DatumDodavanja.ToShortDateString()</td>
+            <td>
+                <a href="/Administracija/Konkurs/Detalji/@x.Id" class="btn btn-primary">Detalji  </a>
+                <a href="/Administracija/Konkurs/Uredi/@x.Id" class="btn btn-success">Uredi  </a>
+                <a href="/Administracija/Konkurs/Obrisi/@x.Id" ajax-poziv="da" ajax-rezultat="page-wrapper"  class="btn btn-danger">Obrisi </a>
+            </td>
+        </tr>
+    }
+</table>
+
+<a href="/Administracija/Konkurs/Add/" class="btn btn-success">Dodaj</a>

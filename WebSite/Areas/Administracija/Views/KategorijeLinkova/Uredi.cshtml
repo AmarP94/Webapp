@@ -1,0 +1,24 @@
+﻿@model KategorijeLinkovaUrediViewModel
+@{
+    ViewData["Title"] = "Uredi";
+}
+
+<h2>Uredi kategoriju</h2>
+<hr/>
+
+<form action="/Administracija/KategorijeLinkova/SnimiUredi/" method="post">
+<table>
+    <tr>
+        <td>Naziv kategorije : </td>
+        <td>@Model.Naziv</td>
+    </tr>
+    <tr>
+        <td>Opis kategorije : </td>
+        <td>@Html.EditorFor(x=>x.Opis)</td>
+    </tr>
+</table>
+    <button class="btn btn-primary">Snimi</button>"
+    <a href="/Administracija/KategorijeLinkova/Index/" class="btn btn-primary">Nazad</a>
+    @Html.HiddenFor(x=>x.Id)
+</form>
+

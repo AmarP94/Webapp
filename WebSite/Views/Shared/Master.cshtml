@@ -1,0 +1,92 @@
+﻿
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <style type="text/css">
+        .gm-style .gm-style-mtc label, .gm-style .gm-style-mtc div {
+            font-weight: 400;
+        }
+    </style>
+    <style type="text/css">
+        .gm-style-pbc {
+            transition: opacity ease-in-out;
+            background-color: black;
+            text-align: center;
+        }
+
+        .gm-style-pbt {
+            font-size: 22px;
+            color: white;
+            font-family: Roboto,Arial,sans-serif;
+            position: relative;
+            margin: 0;
+            top: 50%;
+            -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+        }
+    </style>
+    <style type="text/css">
+        .gm-style .gm-style-cc span, .gm-style .gm-style-cc a, .gm-style .gm-style-mtc div {
+            font-size: 10px;
+        }
+    </style>
+    <style type="text/css">
+        @@media print {
+            .gm-style .gmnoprint, .gmnoprint {
+                display: none
+            }
+        }
+
+        @@media screen {
+            .gm-style .gmnoscreen, .gmnoscreen {
+                display: none
+            }
+        }
+    </style>
+    <style type="text/css">
+        .gm-style {
+            font-family: Roboto,Arial,sans-serif;
+            font-size: 11px;
+            font-weight: 400;
+            text-decoration: none;
+        }
+
+            .gm-style img {
+                max-width: none;
+            }
+    </style>
+    <partial name="~/Views/Shared/_Meta.cshtml" />
+    <link href="~/lib/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <script src="~/js/jquery/jquery.js"></script>
+    <script src="~/lib/bootstrap/js/bootstrap.js"></script>
+    <link href="~/animate.css/animate.css" rel="stylesheet" />
+    <link href="~/css/cssFrontEnd/color-blue.css" rel="stylesheet" />
+    <link href="~/lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="~/css/cssFrontEnd/style.css" rel="stylesheet" />
+    <link href="~/css/cssFrontEnd/width-full.css" rel="stylesheet" />
+    <link href="~/css/cssFrontEnd/WebSiteFrontEnd.css" rel="stylesheet" />
+    <link href="~/css/cssFrontEnd/glDatePicker/styles/glDatePicker.flatwhite.css" rel="stylesheet" />
+    <script src="~/css/cssFrontEnd/glDatePicker/glDatePicker.min.js"></script>
+    <script src="~/waypoints/jquery.waypoints.js"></script>
+</head>
+
+<body class="noPadingMargin">
+    <div class="boxed">
+        <partial name="~/Views/Shared/_Header.cshtml" />
+        <div class="container containerPadding">
+            <div class="row ">
+                <div class="col-xs-12 col-md-6 " style="padding:5px 0px; width:54%;">
+                    @RenderBody() 
+                    
+                </div>
+            </div> 
+        </div>
+    </div>
+   
+
+
+</body>
+</html>

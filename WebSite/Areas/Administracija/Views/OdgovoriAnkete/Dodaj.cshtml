@@ -1,0 +1,19 @@
+﻿@model OdgovoriAnketeUrediViewModel
+@{
+    ViewData["Title"] = "Dodaj";
+}
+
+<h2>Dodaj</h2>
+<hr/>
+<form action="/Administracija/OdgovoriAnkete/SnimiDodaj/" method="post">
+<table>
+    <tr>
+        <td>Unesite odgovor : </td>
+        <td>@Html.TextBoxFor(x => x.Odgovor, new { @class = "form-control" })</td>
+        <td>@Html.ValidationMessageFor(x => x.Odgovor)</td>
+    </tr>
+</table>
+    <button class="btn btn-primary">Snimi</button>
+    <a href="/Administracija/OdgovoriAnkete/Index/@Model.AnketaId" class="btn btn-primary">Nazad</a>
+    @Html.HiddenFor(x=>x.AnketaId)
+</form>

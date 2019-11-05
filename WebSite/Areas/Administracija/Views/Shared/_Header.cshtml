@@ -1,0 +1,22 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using WebSite.db.EntityModels
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+<a class="navbar-brand" href="/Administracija/Home/Home" style="color:white;">Federalna ustanova</a>
+<!-- Top Menu Items -->
+<form asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/Account/Login", new { area = "Identity" })" method="post" id="logoutForm">
+    <ul class="nav navbar-expand top-nav">
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color:white;"><i class="fa fa-user"></i> Zdravo @UserManager.GetUserName(User)<b class="caret"></b></a>
+            <ul class="dropdown-menu dropdown-menu-right">
+                <li>
+                    <a asp-area="Identity" asp-page="/Account/Manage/Index" title="Uredi" class="btn btn-link navbar-btn navbar-link dropdown-item"><i class="fa fa-fw fa-user"></i> Profil</a>
+                </li>
+                <li class="dropdown-divider"></li>
+                <li>
+                    <button type="submit" class="btn btn-link navbar-btn navbar-link dropdown-item" title="Odjava"><i class="fa fa-fw fa-power-off"></i> Odjava</button>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</form>

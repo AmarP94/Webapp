@@ -1,0 +1,38 @@
+﻿@model NajaveMedijIndexViewModel
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Administracija/Views/Shared/MasterAdmin.cshtml";
+}
+
+<h2>Najave za medije</h2>
+<hr />
+<form class="form-inline">
+    <div>
+
+        <input class="form-control" type="text" name="Pretraga" placeholder="Unesite naslov najave" />
+
+        <button class="btn btn-primary">Pretrazi</button>
+    </div>
+</form>
+<br />
+<table class="table" border="1">
+    <tr>
+        <th>Naslov najave</th>
+        <th>Datum objave</th>
+        <th>Akcija</th>
+    </tr>
+    @foreach (var x in Model.Rows)
+    {
+        <tr>
+            <td>@x.Naslov</td>
+            <td>@x.DatumObjave.ToShortDateString()</td>
+            <td>
+                <a href="/Administracija/NajaveMedij/Detalji/@x.Id" class="btn btn-primary">Detalji </a>
+                <a href="/Administracija/NajaveMedij/Uredi/@x.Id" class="btn btn-success">Uredi </a>
+                <a href="/Administracija/NajaveMedij/Obrisi/@x.Id" class="btn btn-danger">Obrisi </a>
+            </td>
+        </tr>
+    }
+</table>
+
+<a href="/Administracija/NajaveMedij/Dodaj/" class="btn btn-success">Dodaj</a>

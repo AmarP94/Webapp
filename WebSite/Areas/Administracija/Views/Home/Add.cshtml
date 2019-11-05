@@ -1,0 +1,51 @@
+﻿@model WebSite.db.EntityModels.KalendarskaObavijest
+
+@{
+    ViewData["Title"] = "Add";
+    Layout = "~/Areas/Administracija/Views/Shared/MasterAdmin.cshtml";
+}
+
+<h2>Add</h2>
+
+<h4>KalendarskaObavijest</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Add">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="NazivKO" class="control-label"></label>
+                <input asp-for="NazivKO" class="form-control" />
+                <span asp-validation-for="NazivKO" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DatumDodavanjaKO" class="control-label"></label>
+                <input asp-for="DatumDodavanjaKO" class="form-control" />
+                <span asp-validation-for="DatumDodavanjaKO" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DatumIzmjeneKO" class="control-label"></label>
+                <input asp-for="DatumIzmjeneKO" class="form-control" />
+                <span asp-validation-for="DatumIzmjeneKO" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VrijemeNajaveKO" class="control-label"></label>
+                <input asp-for="VrijemeNajaveKO" class="form-control" />
+                <span asp-validation-for="VrijemeNajaveKO" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TextKO" class="control-label"></label>
+                <input asp-for="TextKO" class="form-control" />
+                <span asp-validation-for="TextKO" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

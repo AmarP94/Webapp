@@ -1,0 +1,49 @@
+﻿@model AnketaIndexViewModel
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Administracija/Views/Shared/MasterAdmin.cshtml";
+}
+
+<h2>Ankete</h2>
+<hr />
+<form class="form-inline">
+    <div>
+
+        <input class="form-control" type="text" name="Pretraga" placeholder="Unesite naziv" />
+
+        <button class="btn btn-primary">Pretrazi</button>
+    </div>
+</form>
+<br />
+<table class="table" border="1">
+    <tr>
+        <th>Naziv ankete</th>
+        <th>Datum ankete</th>
+        <th>Status ankete</th>
+        <th>Akcija</th>
+    </tr>
+    @foreach (var x in Model.Rows)
+    {
+        <tr>
+            <td>@x.NazivAnkete</td>
+            <td>@x.DatumAnkete.ToShortDateString()</td>
+            @if (x.AktivnaAnketa)
+            {
+                <td>
+                    <a href="/Administracija/Anketa/Promijeni/@x.Id">Aktivna anketa</a>
+                </td>
+            }
+            else
+            {
+                <td>
+                    <a href="/Administracija/Anketa/Promijeni/@x.Id">Neaktivna anketa</a>
+                </td>
+            }
+            <td>
+                <a href="/Administracija/OdgovoriAnkete/Index/@x.Id" class="btn btn-primary">Odgovori </a>
+                <a href="/Administracija/Anketa/Obrisi/@x.Id" class="btn btn-danger">Obrisi </a>
+            </td>
+        </tr>
+    }
+</table>
+<a href="/Administracija/Anketa/Dodaj/" class="btn btn-success">Dodaj</a>

@@ -1,0 +1,29 @@
+﻿@model NajaveMedijDetaljiViewModel
+@{
+    ViewData["Title"] = "Detalji";
+    Layout = "~/Areas/Administracija/Views/Shared/MasterAdmin.cshtml";
+}
+
+<h2>Detalji najave</h2>
+
+<table>
+    <tr>
+        <td>Naslov najave : </td>
+        <td>@Model.Naslov</td>
+    </tr>
+    <tr>
+        <td>Datum objave : </td>
+        <td>@Model.DatumObjave.ToShortDateString()</td>
+    </tr>
+    <tr>
+        <td>Datum izmjene : </td>
+        <td>@Model.DatumIzmjene.ToShortDateString()</td>
+    </tr>
+    <tr>
+        <td>Sadrzaj najave : </td>
+        <td>@Model.Sadrzaj</td>
+    </tr>
+    @Html.HiddenFor(x=>x.Id)
+</table>
+
+<a href="/Administracija/NajaveMedij/Index/" class="btn btn-primary">Nazad</a>

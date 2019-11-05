@@ -1,0 +1,30 @@
+﻿@model KonkursDetaljiViewModel
+@{
+    ViewData["Title"] = "Detalji";
+    Layout = "~/Areas/Administracija/Views/Shared/MasterAdmin.cshtml";
+}
+
+<h2>Detalji konkursa</h2>
+
+<table>
+    <tr>
+        <td>Naziv konkursa : </td>
+        <td>@Model.NazivKonkursa</td>
+    </tr>
+    @*<tr>
+            <td>Tip konkursa : </td>
+            <td>@Model.TipKonkursa</td>
+        </tr>*@
+    <tr>
+        <td>Datum dodavanja : </td>
+        <td>@Model.DatumDodavanja.ToShortDateString()</td>
+    </tr>
+    <tr>
+        <td>Datum izmjene : </td>
+        <td>@Model.DatumIzmjene</td>
+    </tr>
+    <tr>
+        <td colspan="2">Sadrzaj : </td>
+    </tr>
+</table>
+<div>@Html.Raw(Model.Sadrzaj)</div>

@@ -1,0 +1,29 @@
+﻿@model LinkoviIndexViewModel
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Linkovi</h2>
+
+<table class="table" border="1">
+    <tr>
+        <th>Naziv linka</th>
+        <th>URL</th>
+        <th>Kategorija</th>
+        <th>Akcija</th>
+    </tr>
+    @foreach (var x in Model.Rows)
+    {
+        <tr>
+            <td>@x.Naziv</td>
+            <td>@x.URL</td>
+            <td>@x.NazivKategorije</td>
+            <td>
+                <a href="/Administracija/Linkovi/Uredi/@x.Id" class="btn btn-success">Uredi </a>
+                <a href="/Administracija/Linkovi/Obrisi/@x.Id" class="btn btn-danger">Obrisi </a>
+            </td>
+        </tr>
+    }
+</table>
+
+<a href="/Administracija/Linkovi/Dodaj/" class="btn btn-success">Dodaj</a>

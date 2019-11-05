@@ -1,0 +1,32 @@
+﻿@model KonkursUrediViewModel
+@{
+    ViewData["Title"] = "Uredi";
+    Layout = "~/Areas/Administracija/Views/Shared/MasterAdmin.cshtml";
+}
+
+<h2>Uredi</h2>
+
+<hr />
+            <form action="/Administracija/Konkurs/SnimiUredi/" method="post">
+                    <table>
+                        <tr>
+                            <td>Naziv konkursa : </td>
+                            <td>@Model.NazivKonkursa</td>
+                        </tr>
+                        <tr>
+                            <td>Datum dodavanja : </td>
+                            <td>@Model.DatumDodavanja.ToShortDateString()</td>
+                        </tr>
+                        <tr>
+                            <td>Datum izmjene : </td>
+                            <td>@Html.EditorFor(x => x.DatumIzmjene)</td>
+                        </tr>
+                        <tr>
+                            <td>Sadrzaj : </td>
+                            <td>@Html.TextAreaFor(x=>x.Sadrzaj)</td>
+                        </tr>
+                    </table>
+                    @Html.HiddenFor(x=>x.Id)
+                    <button class="btn btn-primary">Snimi</button>
+                <a href="/Administracija/Konkurs/Index/" class="btn btn-primary">Nazad</a>
+                </form>

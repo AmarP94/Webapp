@@ -1,0 +1,35 @@
+﻿@model TipKonkursaDodajViewModel
+@{
+    ViewData["Title"] = "Dodaj";
+    Layout = "~/Areas/Administracija/Views/Shared/MasterAdmin.cshtml";
+
+}
+
+<h2>Dodaj tip konkursa</h2>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form action="/Administracija/TipKonkursa/Snimi/" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Naziv" class="control-label">Naziv tipa konkursa</label>
+                <input asp-for="Naziv" class="form-control" />
+                <span asp-validation-for="Naziv" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group">
+                <button class="btn btn-primary">Snimi</button>
+                <a href="/Administracija/TipKonkursa/Index/" class="btn btn-primary">Nazad</a>
+            </div>
+        </form>
+    </div>
+</div>
+@*<form action="/Administracija/TipKonkursa/Snimi/" method="post">
+        <table>
+            <tr>
+                <td>Unesite naziv tipa konkursa : </td>
+                <td>@Html.EditorFor(x => x.Naziv)</td>
+            </tr>
+        </table>
+        <button>Snimi</button>
+    </form>*@

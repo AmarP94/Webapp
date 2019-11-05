@@ -1,0 +1,23 @@
+﻿@model TipKonkursaIndexVIewModel
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Tipovi konkursa</h2>
+
+<table class="table" border="1">
+    <tr>
+        <th>Naziv</th>
+        <th>Akcija</th>
+    </tr>
+    @foreach (var x in Model.Rows)
+    {
+        <tr>
+            <td>@x.Naziv</td>
+            <td>
+                <a href="/Administracija/TipKonkursa/Obrisi/@x.Id" class="btn btn-danger">Obrisi</a>
+            </td>
+        </tr>
+    }
+</table>
+<a href="/Administracija/TipKonkursa/Dodaj/" class="btn btn-success">Dodaj</a>

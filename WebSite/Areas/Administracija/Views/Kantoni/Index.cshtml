@@ -1,0 +1,26 @@
+﻿@model KantoniIndexViewModel
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<table class="table" border="1">
+    <tr>
+        <th>Naziv kantona</th>
+        <th>Oznaka kantona</th>
+        <th>Akcija</th>
+    </tr>
+    @foreach (var x in Model.Rows)
+    {
+        <tr>
+            <td>@x.Naziv</td>
+            <td>@x.Oznaka</td>
+            <td>
+                <a href="/Administracija/Kantoni/Obrisi/@x.Id" class="btn btn-danger">Obrisi</a>
+            </td>
+        </tr>
+    }
+</table>
+
+<a href="/Administracija/Kantoni/Dodaj/" class="btn btn-success">Dodaj</a>

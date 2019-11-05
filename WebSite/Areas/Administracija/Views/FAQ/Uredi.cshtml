@@ -1,0 +1,28 @@
+﻿@model FAQUrediViewModel
+@{
+    ViewData["Title"] = "Uredi";
+}
+
+<h2>Uredi</h2>
+
+<form action="/Administracija/FAQ/SnimiUredi/" method="post">
+<table>
+    <tr>
+        <td>Pitanje : </td>
+        <td>@Model.Pitanje</td>
+    </tr>
+    <tr>
+        <td>Odgovor : </td>
+        <td>@Html.TextBoxFor(x => x.Odgovor, new { @class = "form-control" })</td>
+        <td>@Html.ValidationMessageFor(x => x.Odgovor)</td>
+    </tr>
+    <tr>
+        <td>Datum izmjene : </td>
+        <td>@Html.EditorFor(x=>x.DatumIzmjene)</td>
+    </tr>
+</table>
+    @Html.HiddenFor(x => x.Id);
+    <button class="btn btn-primary">Snimi</button>
+    <a href="/Administracija/FAQ/Index/" class="btn btn-primary">Nazad</a>
+</form>
+
